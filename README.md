@@ -7,11 +7,11 @@ $ git clone https://github.com/Dolfost/Pygram
 ```
 Install dependencies
 ```
-pip install -U matplotlib
+$ pip install -U matplotlib
 ```
 Run
 ```
-python3 pygram.py --help
+$ python3 pygram.py --help
 ```
 to read help.
 ## Examples
