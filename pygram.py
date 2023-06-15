@@ -4,7 +4,7 @@ import sys
 
 version = "1.1"
 
-parser = ArgumentParser(formatter_class=ArgumentDefaultsHelpFormatter)
+parser = ArgumentParser(formatter_class = ArgumentDefaultsHelpFormatter)
 parser.add_argument("-f", "--file", type = str, help = "Input datafile", required = True)
 # parser.add_argument("-h", "--help", type = bool, help = "Print this message")
 parser.add_argument("-v", "--version", action = "version", version = version, help = "Print version")
@@ -27,13 +27,29 @@ for idx, var in data.items():
 
 print("Data, extracted from", args.file, ":\n", data)
 
-
-plt.figure(num = 'Pygram ' + version)
-plt.ylabel(args.yname)
-plt.xlabel(args.xname)
+fig, ax = plt.subplots(figsize = (16,9), dpi = 96)
+# plt.figure(num = 'Pygram ' + version) # TODO make it work
 
 plt.xticks(rotation = args.rotation)
 
-plt.bar(range(len(data)), list(data.values()) , tick_label = list(data.keys()), color = args.color, edgecolor = args.outline, width = args.width)
+ax.grid(which = "major", axis = 'x', color = '#DAD8D7', alpha = 0.5, zorder = 1)
+ax.grid(which = "major", axis = 'y', color = '#DAD8D7', alpha = 0.5, zorder = 1)
+
 plt.title(args.title, color = "#f09f0a", loc = "left", fontstyle = "italic")
+
+bar1 = ax.bar(range(len(data)), list(data.values()) , tick_label = list(data.keys()), color = args.color, edgecolor = args.outline, width = args.width)
+
+# x-axis
+ax.set_xlabel(args.xname, fontsize = 12, labelpad = 10)
+ax.xaxis.set_label_position("bottom")
+ax.xaxis.set_tick_params(pad = 2, labelbottom = True, bottom = True, labelsize = 12, rotation = "auto")
+
+# y-axis
+ax.set_ylabel(args.yname, fontsize = 12, labelpad = 10)
+ax.yaxis.set_label_position("left")
+ax.yaxis.set_tick_params(pad = 2, labeltop = False, labelbottom = True, bottom = False, labelsize = 12)
+
+ax.bar_label(bar1, labels = list(data.values()), padding = 3, color = 'black', fontsize = 8) 
+
+
 plt.show()
