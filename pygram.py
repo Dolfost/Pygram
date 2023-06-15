@@ -30,6 +30,7 @@ print("Data, extracted from", args.file, ":\n", data)
 fig, ax = plt.subplots(figsize = (16,9), dpi = 96)
 # plt.figure(num = 'Pygram ' + version) # TODO make it work
 
+fig.tight_layout(pad = 4)
 
 plt.title(args.title, color = "#f09f0a", loc = "left", fontstyle = "italic")
 
@@ -50,3 +51,4 @@ if args.label:
 
 
 plt.show()
+
