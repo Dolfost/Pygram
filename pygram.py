@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 import sys
 
-version = "1.1"
+version = "1.2"
 
 parser = ArgumentParser(formatter_class = ArgumentDefaultsHelpFormatter)
 parser.add_argument("-f", "--file", type = str, help = "Input datafile", required = True)
@@ -30,11 +30,11 @@ print("Data, extracted from", args.file, ":\n", data)
 fig, ax = plt.subplots(figsize = (16,9), dpi = 96)
 # plt.figure(num = 'Pygram ' + version) # TODO make it work
 
-ax.grid(which = "major", axis = 'both', color = '#DAD8D7', alpha = 0.5, zorder = 100)
 
 plt.title(args.title, color = "#f09f0a", loc = "left", fontstyle = "italic")
 
-bar1 = ax.bar(range(len(data)), list(data.values()) , tick_label = list(data.keys()), color = args.color, edgecolor = args.outline, width = args.width)
+ax.grid(which = "major", axis = 'both', color = '#DAD8D7', alpha = 0.5, zorder = 0)
+bar1 = ax.bar(range(len(data)), list(data.values()) , tick_label = list(data.keys()), color = args.color, edgecolor = args.outline, width = args.width, zorder = 3)
 # x-axis
 ax.set_xlabel(args.xname, fontsize = 12, labelpad = 10)
 ax.xaxis.set_label_position("bottom")
