@@ -16,8 +16,10 @@ python3 pygram.py --help
 to read help.
 ## Examples
 Prompt
+```
+$ python3 pygram.py --file data1.txt --yname "Population" --xname "Country" --color "#0772f5" --title "Top 10 largest Europe countries" 
+```
 
-![Terminal](images/prompt.png)
 produces
 
 ![App](images/app.png)
