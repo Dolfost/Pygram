@@ -2,12 +2,12 @@ import matplotlib.pyplot as plt
 from argparse import ArgumentParser, ArgumentDefaultsHelpFormatter
 import sys
 
-version = "1.0"
+version = "1.1"
 
 parser = ArgumentParser(formatter_class=ArgumentDefaultsHelpFormatter)
 parser.add_argument("-f", "--file", type = str, help = "Input datafile", required = True)
 # parser.add_argument("-h", "--help", type = bool, help = "Print this message")
-parser.add_argument("-v", "--version", action = "version", version = "%(prog) " + version,  help = "Print this message")
+parser.add_argument("-v", "--version", action = "version", version = version, help = "Print version")
 parser.add_argument("-d", "--diagram", type = bool, help = "Open diagram window")
 parser.add_argument("-x", "--xname", default = "X-axis", type = str, help = "Name of the x axis")
 parser.add_argument("-y", "--yname", default = "Y-axis", type = str, help = "Name of the y axis")
