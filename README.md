@@ -5,7 +5,7 @@ Clone the repository with
 ```
 $ git clone https://github.com/Dolfost/Pygram
 ```
-Install dependicies
+Install dependencies
 ```
 pip install -U matplotlib
 ```
