@@ -23,7 +23,3 @@ produces
 ![App](images/app.png)
 ### Help
 ![Help](images/help.png)
-```
-python3 pygram.py -h
-```
-![Help image](images/help.png)
