@@ -27,7 +27,7 @@ for idx, var in data.items():
     data[idx] = float(var)
 
 print("Data, extracted from", args.file, ":\n", data)
-fig, ax = plt.subplots(figsize = (16,9), dpi = 96)
+fig, ax = plt.subplots(figsize = (14,8), dpi = 70)
 # plt.figure(num = 'Pygram ' + version) # TODO make it work
 
 fig.tight_layout(pad = 4)
@@ -36,6 +36,7 @@ plt.title(args.title, color = "#f09f0a", loc = "left", fontstyle = "italic")
 
 ax.grid(which = "major", axis = 'both', color = '#DAD8D7', alpha = 0.5, zorder = 0)
 bar1 = ax.bar(range(len(data)), list(data.values()) , tick_label = list(data.keys()), color = args.color, edgecolor = args.outline, width = args.width, zorder = 3)
+
 # x-axis
 ax.set_xlabel(args.xname, fontsize = 12, labelpad = 10)
 ax.xaxis.set_label_position("bottom")
